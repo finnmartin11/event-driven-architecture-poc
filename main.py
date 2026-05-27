@@ -1,6 +1,8 @@
-def main():
-    print("Hello from event-driven-architecture-poc!")
+from polling.worker import main as run_polling
 
+
+def main():
+    run_polling()
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,20 @@
+target-version = "py311"
+line-length = 160
+exclude = ["venv", ".venv"]
+
+[lint]
+select = [
+  "TD004", "TD007", "TD005", "TD006", "TD001",
+  "F401", # unused imports
+  "I"     # import sorting
+]
+fixable = ["ALL"]
+ignore = ["E501"]
+
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
