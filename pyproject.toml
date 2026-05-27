@@ -8,6 +8,7 @@ dependencies = [
     "azure-identity==1.25.1",
     "azure-keyvault-secrets==4.10.0",
     "psycopg2-binary==2.9.11",
+    "psycopg[binary]>=3.3.4",
     "python-dotenv>=1.2.2",
     "sqlalchemy==2.0.45",
 ]

@@ -1,3 +1,8 @@
+
+-- clean up
+TRUNCATE TABLE public.polling_poc_event_queue RESTART IDENTITY;
+TRUNCATE TABLE public.polling_poc_raw_data RESTART IDENTITY CASCADE;
+
 -- single insert
 INSERT INTO public.polling_poc_raw_data (
     name,
@@ -29,3 +34,7 @@ SELECT
     now(),
     1
 FROM generate_series(1, 10) AS i;
+
+-- view data
+select * from polling_poc_raw_data;
+select * from polling_poc_event_queue;

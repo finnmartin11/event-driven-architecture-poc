@@ -126,7 +126,7 @@ def run_polling_worker(
 
 def load_config() -> PollingWorkerConfig:
     return PollingWorkerConfig(
-        worker_id=os.getenv("WORKER_ID", "polling-worker-1"),
+        worker_id=os.getenv("POLLING_WORKER_ID", "polling-worker-1"),
         polling_interval_seconds=float(os.getenv("POLLING_INTERVAL_SECONDS", "1.0")),
         max_polling_interval_seconds=float(os.getenv("MAX_POLLING_INTERVAL_SECONDS", "10.0")),
         simulated_processing_seconds=float(os.getenv("SIMULATED_PROCESSING_SECONDS", "0.0")),
