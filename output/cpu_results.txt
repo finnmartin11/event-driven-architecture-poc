@@ -1,0 +1,15 @@
+## Polling
+============================================================
+  CPU / Memory Summary (171 samples)
+============================================================
+  System CPU:  avg=1.4%  max=7.9%
+  Process CPU: avg=0.2%  max=5.0%
+  Process RSS: avg=84.5MB  max=86.5MB
+
+## Notify
+============================================================
+  CPU / Memory Summary (134 samples)
+============================================================
+  System CPU:  avg=1.4%  max=7.0%
+  Process CPU: avg=0.2%  max=2.0%
+  Process RSS: avg=90.2MB  max=91.3MB

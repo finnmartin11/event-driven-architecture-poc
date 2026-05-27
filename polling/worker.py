@@ -145,14 +145,24 @@ def main() -> None:
     load_dotenv()
     configure_logging()
 
+    from metrics.cpu_monitor import CpuMonitor
+
+    cpu_monitor = CpuMonitor()
+    cpu_monitor.start()
+
     engine = create_db_engine()
     repository = PollingPocRepository(engine)
     config = load_config()
 
-    run_polling_worker(
-        repository=repository,
-        config=config,
-    )
+    try:
+        run_polling_worker(
+            repository=repository,
+            config=config,
+        )
+    finally:
+        cpu_monitor.stop()
+        cpu_monitor.print_summary()
+        cpu_monitor.write_csv("output/polling_cpu.csv")
 
 
 if __name__ == "__main__":

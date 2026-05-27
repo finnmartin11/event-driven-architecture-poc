@@ -181,11 +181,21 @@ def main() -> None:
 
     config = load_config()
 
-    run_notify_worker(
-        repository=repository,
-        listener=listener,
-        config=config,
-    )
+    from metrics.cpu_monitor import CpuMonitor
+
+    cpu_monitor = CpuMonitor()
+    cpu_monitor.start()
+
+    try:
+        run_notify_worker(
+            repository=repository,
+            listener=listener,
+            config=config,
+        )
+    finally:
+        cpu_monitor.stop()
+        cpu_monitor.print_summary()
+        cpu_monitor.write_csv("output/notify_cpu.csv")
 
 
 if __name__ == "__main__":
