@@ -25,9 +25,6 @@ class PollingWorkerConfig:
 def process_rows(rows: list[dict[str, Any]], simulated_processing_seconds: float) -> None:
     """
     Replace this with real POC processing if needed.
-
-    For the first benchmark, it is useful to keep processing intentionally
-    simple so the measured difference is mostly polling latency.
     """
     if simulated_processing_seconds > 0:
         time.sleep(simulated_processing_seconds)

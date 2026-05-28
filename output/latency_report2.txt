@@ -1,0 +1,42 @@
+
+============================================================
+  Strategy: POLLING
+============================================================
+  Events: 1209 total, 1209 processed, 0 failed, 0 unprocessed
+  Throughput: 3.13 rows/sec
+
+  Pickup Latency (created_at -> started_at):
+    avg=4239.02ms  min=82.70ms  max=89326.07ms
+    p50=3395.85ms  p95=9477.34ms  p99=10179.30ms
+
+  Processing Duration (started_at -> processed_at):
+    avg=369.53ms  min=322.10ms  max=671.93ms
+    p50=361.59ms  p95=416.81ms
+
+  End-to-End (created_at -> processed_at):
+    avg=4608.55ms  min=428.66ms  max=89709.55ms
+    p50=3782.01ms  p95=9830.57ms  p99=10548.01ms
+
+============================================================
+  Strategy: NOTIFY
+============================================================
+  Events: 1208 total, 1208 processed, 0 failed, 0 unprocessed
+  Throughput: 3.13 rows/sec
+
+  Pickup Latency (created_at -> started_at):
+    avg=507.68ms  min=159.21ms  max=112791.01ms
+    p50=179.31ms  p95=227.96ms  p99=288.28ms
+
+  Processing Duration (started_at -> processed_at):
+    avg=370.55ms  min=327.92ms  max=671.05ms
+    p50=363.88ms  p95=421.06ms
+
+  End-to-End (created_at -> processed_at):
+    avg=878.23ms  min=490.97ms  max=113151.11ms
+    p50=543.69ms  p95=645.36ms  p99=725.94ms
+
+============================================================
+  COMPARISON (polling vs notify)
+============================================================
+  Pickup latency avg: polling=4239.02ms  notify=507.68ms  (8.3x faster)
+  E2E latency avg:    polling=4608.55ms  notify=878.23ms  (5.2x faster)
